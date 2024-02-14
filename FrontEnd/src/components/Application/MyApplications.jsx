@@ -38,7 +38,7 @@ const MyApplications = () => {
 
   const deleteApplication = (id) => {
     try {
-      axios.delete(`http://localhost:4000/api/v1/application/delete/${id}`,
+      axios.delete(`https://jobportal-ghqx.onrender.com/api/v1/application/delete/${id}`,
       {withCredentials : true}).then((res) => {
         toast.success(res.data.message);
         setApplications((prevApplication) => prevApplication.filter((application) => application._id !== id));
