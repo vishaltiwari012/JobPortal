@@ -25,7 +25,7 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async() => {
       try{
-        const response = await axios.get("https://jobportal-ghqx.onrender.com/api/v1/user/getuser", {withCredentials : true});
+        const response = await axios.get("https://jobportal-xveu.onrender.com/api/v1/user/getuser", {withCredentials : false});
         setUser(response.data.user);
         setIsAuthorized(true);
       }

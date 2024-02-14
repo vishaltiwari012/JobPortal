@@ -22,7 +22,7 @@ const MyApplications = () => {
         })
       }
       else {
-        axios.get(`https://jobportal-xveu.onrender.com/api/v1/application/jobseeker/getall`, {withCredentials : true})
+        axios.get(`https://jobportal-xveu.onrender.com/api/v1/application/jobseeker/getall`, {withCredentials : false})
         .then((res) => {
           setApplications(res.data.applications);
         })
@@ -39,7 +39,7 @@ const MyApplications = () => {
   const deleteApplication = (id) => {
     try {
       axios.delete(`https://jobportal-xveu.onrender.com/api/v1/application/delete/${id}`,
-      {withCredentials : true}).then((res) => {
+      {withCredentials : false}).then((res) => {
         toast.success(res.data.message);
         setApplications((prevApplication) => prevApplication.filter((application) => application._id !== id));
       })

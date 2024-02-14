@@ -24,7 +24,7 @@ const Register = () => {
     try {
       const {data} = await axios.post(`https://jobportal-xveu.onrender.com/api/v1/user/register`, 
       {name, email, password, phone, role}, 
-      {withCredentials : true, 
+      {withCredentials : false, 
         headers : {
         "Content-Type" : "application/json"
       }});

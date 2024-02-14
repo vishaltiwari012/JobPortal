@@ -22,7 +22,7 @@ const Login = () => {
     try {
       const {data} = await axios.post(`https://jobportal-xveu.onrender.com/api/v1/user/login`, 
       {email, password, role}, 
-      {withCredentials : true, 
+      {withCredentials : false, 
         headers : {
         "Content-Type" : "application/json"
       }});
