@@ -16,13 +16,13 @@ const MyApplications = () => {
   useEffect(() => {
     try {
       if(user && user.role === "Employer") {
-        axios.get("http://localhost:4000/api/v1/application/employer/getall", {withCredentials : true})
+        axios.get(`https://jobportal-xveu.onrender.com/api/v1/application/employer/getall`, {withCredentials : true})
         .then((res) => {
           setApplications(res.data.applications);
         })
       }
       else {
-        axios.get("http://localhost:4000/api/v1/application/jobseeker/getall", {withCredentials : true})
+        axios.get(`https://jobportal-xveu.onrender.com/api/v1/application/jobseeker/getall`, {withCredentials : true})
         .then((res) => {
           setApplications(res.data.applications);
         })
@@ -38,7 +38,7 @@ const MyApplications = () => {
 
   const deleteApplication = (id) => {
     try {
-      axios.delete(`https://jobportal-ghqx.onrender.com/api/v1/application/delete/${id}`,
+      axios.delete(`https://jobportal-xveu.onrender.com/api/v1/application/delete/${id}`,
       {withCredentials : true}).then((res) => {
         toast.success(res.data.message);
         setApplications((prevApplication) => prevApplication.filter((application) => application._id !== id));

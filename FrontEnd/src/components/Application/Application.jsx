@@ -35,7 +35,7 @@ const Application = () => {
     formData.append("jobId", id);
     
     try {
-      const {data} = await axios.post("https://jobportal-ghqx.onrender.com/api/v1/application/post", 
+      const {data} = await axios.post(`https://jobportal-xveu.onrender.com/api/v1/application/post`, 
       formData, {withCredentials : true,
       headers : {
         "Content-Type" : "multipart/form-data"
