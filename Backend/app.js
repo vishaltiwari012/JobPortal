@@ -15,7 +15,7 @@ dotenv.config({path : './config/config.env'});
 
 //Connect backend with frontend
 app.use(cors({
-    origin : [process.env.FRONTEND_URL],
+    origin : [process.env.FRONTEND],
     methods : ['GET', 'PUT', 'POST', 'DELETE'],
     credentials : true,
 }))
