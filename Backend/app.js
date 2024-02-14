@@ -12,13 +12,12 @@ import { errorMiddleware } from './middlewares/error.js';
 //middlewares
 const app = express();
 dotenv.config({path : './config/config.env'});
-app.use(cors());
-// //Connect backend with frontend
-// app.use(cors({
-//     origin : [process.env.FRONTEND_URL],
-//     methods : ['GET', 'PUT', 'POST', 'DELETE'],
-//     credentials : true,
-// }))
+app.use(cors())
+//Connect backend with frontend
+app.use(cors({
+    methods : ['GET', 'PUT', 'POST', 'DELETE'],
+    credentials : true,
+}))
 
 //cookie parser
 app.use(cookieParser());
