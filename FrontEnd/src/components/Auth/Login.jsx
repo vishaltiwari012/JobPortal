@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Context } from '../../main';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { FaPencilAlt, FaRegUser } from 'react-icons/fa';
@@ -36,10 +36,9 @@ const Login = () => {
     }
   }
 
-  if(isAuthorized) {
-    navigateTo("/");
+  if(isAuthorized){
+    return <Navigate to={'/'}/>
   }
-
   return (
     <>
       <div className="authPage">
