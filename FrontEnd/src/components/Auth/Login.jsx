@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { Context } from '../../main';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { Navigate } from 'react-router-dom';
 import { FaPencilAlt, FaRegUser } from 'react-icons/fa';
 import { MdOutlineMailOutline } from 'react-icons/md';
 import { FaPhoneFlip } from 'react-icons/fa6';
@@ -14,6 +13,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
+  const navigateTo = useNavigate();
 
   const {isAuthorized, setIsAuthorized, user, setUser} = useContext(Context);
 
@@ -37,7 +37,7 @@ const Login = () => {
   }
 
   if(isAuthorized) {
-    return <Navigate to={"/"}/>
+    navigateTo("/");
   }
 
   return (
