@@ -11,7 +11,7 @@ const Jobs = () => {
 
   useEffect(() => {
     try {
-      axios.get(`https://jobportal-xveu.onrender.com/api/v1/job/getall`, {withCredentials : false})
+      axios.get(`https://jobportal-xveu.onrender.com/api/v1/job/getall`, {withCredentials : true})
       .then((res)=> {
         setJobs(res.data);
       })

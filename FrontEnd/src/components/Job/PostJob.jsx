@@ -39,7 +39,7 @@ const PostJob = () => {
     fixedSalary.length >= 4 
     ? {title, description, category, country, city, location, fixedSalary}
     : {title, description, category, country, city, location, salaryFrom, salaryTo},
-    {withCredentials : false, headers : {"Content-Type":" application/json"}})
+    {withCredentials : true, headers : {"Content-Type":" application/json"}})
     .then((res) => toast.success(res.data.message))
     .catch((error) => {
       toast.error(error.response.data.message);
