@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
-    "build" : "npm i"
+    "build" : "npm install"
   },
   "author": "Vishal",
   "license": "ISC",
