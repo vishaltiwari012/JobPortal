@@ -13,8 +13,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
-  const navigateTo = useNavigate();
-
   const {isAuthorized, setIsAuthorized, user, setUser} = useContext(Context);
 
   const handleLogin = async(e) => {
