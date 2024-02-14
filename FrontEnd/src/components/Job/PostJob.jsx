@@ -35,11 +35,11 @@ const PostJob = () => {
       setFixedSalary("");
     }
 
-    await axios.post(`https://jobportal-xveu.onrender.com/api/v1/job/post`,
+    await axios.post(`http://localhost:4000/api/v1/job/post`,
     fixedSalary.length >= 4 
     ? {title, description, category, country, city, location, fixedSalary}
     : {title, description, category, country, city, location, salaryFrom, salaryTo},
-    {withCredentials : false, headers : {"Content-Type":" application/json"}})
+    {withCredentials : true, headers : {"Content-Type":" application/json"}})
     .then((res) => toast.success(res.data.message))
     .catch((error) => {
       toast.error(error.response.data.message);

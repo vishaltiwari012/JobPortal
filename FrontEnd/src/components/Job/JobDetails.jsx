@@ -12,7 +12,7 @@ const JobDetails = () => {
   const {isAuthorized, user} = useContext(Context);
 
   useEffect(() => {
-    axios.get(`https://jobportal-xveu.onrender.com/api/v1/job/${id}`, {withCredentials : false})
+    axios.get(`http://localhost:4000/api/v1/job/${id}`, {withCredentials : true})
     .then((res) => {
       setJob(res.data.job);
     }).catch((err => {

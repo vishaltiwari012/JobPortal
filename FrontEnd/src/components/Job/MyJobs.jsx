@@ -17,8 +17,8 @@ const MyJobs = () => {
   useEffect(() => {
     const fetchJobs = async() => {
       try {
-        const {data} = await axios.get(`https://jobportal-xveu.onrender.com/api/v1/job/getmyjobs`, 
-        {withCredentials : false});
+        const {data} = await axios.get("http://localhost:4000/api/v1/job/getmyjobs", 
+        {withCredentials : true});
         setMyJobs(data.myJobs);
       } catch (error) {
         toast.error(error.response.data.message);
@@ -45,8 +45,8 @@ const MyJobs = () => {
   //Function for editing job
   const handleUpdateJob = async(jobId) => {
     const updatedJob = myJobs.find((job) => job._id === jobId);
-    await axios.put(`https://jobportal-xveu.onrender.com/api/v1/job/update/${jobId}`, 
-    updatedJob, {withCredentials : false})
+    await axios.put(`https://jobportal-ghqx.onrender.com/api/v1/job/update/${jobId}`, 
+    updatedJob, {withCredentials : true})
     .then((res) => {
       toast.success(res.data.message);
       setEditingMode(null);
@@ -57,8 +57,8 @@ const MyJobs = () => {
 
   //function for deleting job
   const handleJobDelete = async(jobId) => {
-    await axios.delete(`https://jobportal-xveu.onrender.com/api/v1/job/delete/${jobId}`, 
-    {withCredentials : false})
+    await axios.delete(`https://jobportal-ghqx.onrender.com/api/v1/job/delete/${jobId}`, 
+    {withCredentials : true})
     .then((res) => {
       toast.success(res.data.message);
       setMyJobs(prevJobs => prevJobs.filter(job => job._id !== jobId));
