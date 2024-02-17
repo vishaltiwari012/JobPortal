@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import cors from 'cors';
+// import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import fileUpload from 'express-fileupload';
 import userRouter from './routes/userRouter.js';
@@ -13,12 +13,12 @@ import { errorMiddleware } from './middlewares/error.js';
 const app = express();
 dotenv.config({path : './config/config.env'});
 
-//Connect backend with frontend
-app.use(cors({
-    origin : [process.env.FRONTEND_URL],
-    methods : ['GET', 'PUT', 'POST', 'DELETE'],
-    credentials : true,
-}))
+// //Connect backend with frontend
+// app.use(cors({
+//     origin : [process.env.FRONTEND_URL],
+//     methods : ['GET', 'PUT', 'POST', 'DELETE'],
+//     credentials : true,
+// }))
 
 //cookie parser
 app.use(cookieParser());
